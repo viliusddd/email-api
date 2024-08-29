@@ -2,7 +2,7 @@
 
 <img align=right src="assets/email_preview.png" width="45%"/>
 
-Automate your way to sounding like a tech-savvy business wizard, no actual wizardry required!
+Automate your email game with random phrases that sound smart and urgent!
 
 - [Spam-O-Matic 3000](#spam-o-matic-3000)
   - [Features](#features)
