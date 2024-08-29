@@ -44,7 +44,7 @@ Automate your way to sounding like a tech-savvy business wizard, no actual wizar
 - **api_name**: either `techy` or `corporatebs`.
 
 ```sh
-python email_proj.py <email> <api_name>
+python email_api.py <email> <api_name>
 ```
 
 ## Test

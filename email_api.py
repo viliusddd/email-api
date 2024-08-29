@@ -96,7 +96,7 @@ def get_api_resp(api):
 
 def args():
     if len(sys.argv) != 3:
-        sys.exit("Usage: python email_proj.py <email> <api_name>\n\n"
+        sys.exit("Usage: python email_api.py <email> <api_name>\n\n"
                  "Arguments:\n"
                  "  <api_name>      techy or corporatebs")
 
