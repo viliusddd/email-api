@@ -1,6 +1,6 @@
 import pytest
 
-from email_proj import gen_email_body, validate_email_addr
+from email_api import gen_email_body, validate_email_addr
 
 
 def test_get_email_body():
