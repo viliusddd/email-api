@@ -33,7 +33,10 @@ Automate your way to sounding like a tech-savvy business wizard, no actual wizar
     . .venv/bin/activate && \
     pip install -r requirements.txt
     ```
-2. Replace `.env` values.
+2. Replace `.env` values:
+
+   - **SENDER_EMAIL**: gmail email address.
+   - **SENDER_APP_PASS**: password from `https://myaccount.google.com/apppasswords`.
 
 ## Usage
 

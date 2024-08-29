@@ -5,8 +5,8 @@ import smtplib
 import socket
 import sys
 
-from email.mime.text import MIMEText
 from dotenv import load_dotenv
+from email.mime.text import MIMEText
 
 load_dotenv()
 
@@ -58,7 +58,7 @@ def send_email(body, recipient):
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp_server:
-            smtp_server.login(msg["From"], os.getenv("SENDER_EMAIL_PASS"))
+            smtp_server.login(msg["From"], os.getenv("SENDER_APP_PASS"))
             smtp_server.sendmail(msg["From"], recipient, msg.as_string())
         print("Message sent!")
     except socket.error:
