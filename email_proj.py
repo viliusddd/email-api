@@ -30,12 +30,12 @@ def get_response(url):
 
 def gen_email_body(response):
     return f"""
-Hello,
+    Hello,
 
-give me a call, {response.lower()}.
+    give me a call, {response.lower()}.
 
-Thanks,
-V."""
+    Thanks,
+    V."""
 
 
 def send_email(body, recipient):
@@ -89,9 +89,9 @@ def get_api_resp(api):
     return resp
 
 
-def validate_args():
-    if len(sys.argv) < 3:
-        sys.exit('Usage: python proj2.py <email> <api_name>\n\n'
+def args():
+    if len(sys.argv) != 3:
+        sys.exit('Usage: python email_proj.py <email> <api_name>\n\n'
                  'Arguments:\n'
                  '  <api_name>      techy or corporatebs')
 
@@ -101,12 +101,14 @@ def validate_args():
     if sys.argv[2] not in ['techy', 'corporatebs']:
         sys.exit('Wrong API name. Choose either "techy" or "corporatebs".')
 
+    return sys.argv[1:]
+
 
 def main():
-    validate_args()
+    email_addr, api_url = args()
 
-    email_body = gen_email_body(get_api_resp(sys.argv[2]))
-    send_email(email_body, sys.argv[1])
+    email_body = gen_email_body(get_api_resp(api_url))
+    send_email(email_body, email_addr)
 
 
 if __name__ == '__main__':
