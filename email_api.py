@@ -118,15 +118,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-"""
-5 keybindings:
-- Alt + left/right/up/down -> move between vscode splits, terminal and
-  side panels.
-- ctrl + ` -> toggle terminal.
-- gh -> highlight function description or error description (vim mode in
-  vscode).
-- Alt + B -> toggle bookmark line
-- Alt + n/p -> move between bookmarks
-"""
