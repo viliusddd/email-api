@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 import re
 import requests
@@ -11,7 +13,7 @@ from email.mime.text import MIMEText
 load_dotenv()
 
 
-def get_response(url):
+def get_response(url: str):
     """
     Connect to chosen api and return json response.
 
@@ -41,25 +43,25 @@ Thanks,
 V."""
 
 
-def send_email(body, recipient):
+def send_email(email_body: str, email_recipient: str):
     """
     Send email from gmail address
 
     Args:
         body (str): text body of email
-        recipient (): email address of person to send to
+        recipient (str): email address of person to send to
     """
 
-    msg = MIMEText(body)
+    msg = MIMEText(email_body)
 
     msg["Subject"] = "Urgent!"
     msg["From"] = os.getenv("SENDER_EMAIL")
-    msg["To"] = recipient
+    msg["To"] = email_recipient
 
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp_server:
             smtp_server.login(msg["From"], os.getenv("SENDER_APP_PASS"))
-            smtp_server.sendmail(msg["From"], recipient, msg.as_string())
+            smtp_server.sendmail(msg["From"], email_recipient, msg.as_string())
         print("Message sent!")
     except socket.error:
         sys.exit("Could not connect.")
@@ -74,7 +76,7 @@ def validate_email_addr(email):
         return True
 
 
-def get_api_resp(api):
+def get_api_resp(api: str):
     """
     Return response message from one of the two api endpoints
 
